@@ -1,0 +1,32 @@
+[
+  {
+     "id":1,
+     "qs":"Cardiology",
+     "ans":"Content of Tab 1"
+  },
+  {
+     "id":2,
+     "qs":"Hepatology",
+     "ans":"Content of Tab 2"
+  },
+  {
+     "id":3,
+     "qs":"Pediatrics",
+     "ans":"Content of Tab 3"
+  },
+  {
+     "id":4,
+     "qs":"EYe Care",
+     "ans":"Content of Tab 3"
+  },
+  {
+     "id":5,
+     "qs":"Medicine",
+     "ans":"Content of Tab 3"
+  },
+  {
+     "id":6,
+     "qs":"Others",
+     "ans":"Content of Tab 3"
+  }
+]

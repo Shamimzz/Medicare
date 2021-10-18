@@ -1,0 +1,87 @@
+/* .Extra1{
+    width: 100%;
+    height: 50vh;
+} */
+.bannerImg{
+        background-image: linear-gradient(#36dbdb54, #36dbdb54), url("../Images/Extra1Img.jpg");
+        height: 75vh;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center center;
+        position:relative;
+        color: #033b4a;
+}
+
+.post-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.btn-play{
+    color: #fff;
+    font-size: 40px;
+}
+  .title{
+    font-family: 'Andada Pro', serif;
+  }
+
+@media only screen and (max-width: 767px){
+    .post-content{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .hero-text {
+        margin-top: -390px;
+    }
+    #btn{
+        font-size: 18px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .text-muted{
+        font-size: 16px;
+    }
+    .title{
+      font-size: 20px;
+      font-family: 'Teko', sans-serif;
+    }
+}
+
+@media only screen and (max-width: 467px){
+    .post-content{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .btn-play{
+        font-size: 30px;
+        margin-top: 40px;
+    }
+    .hero-text {
+        margin-top: -390px;
+    }
+    .btn2{
+        display: none;
+    }
+    #btn{
+        font-size: 12px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .text-muted{
+        font-size: 12px;
+    }
+    .title{
+      font-size: 16px;
+      font-family: 'Teko', sans-serif;
+    }
+}
+
+
+

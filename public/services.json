@@ -1,0 +1,43 @@
+[
+    {  "id" : 1,
+       "name":"Emergency Care",
+       "price":2000,
+       "des" : "Emergency Care is an essential part of the health system and serves as the first point of contact for many around the world.",
+       "img": "https://www.ecmc.edu/wp-content/uploads/2021/01/trauma-and-emergency-care_hero_2.jpg"
+    },
+    { 
+       "id" : 2,
+       "name":"Operation Theatre",
+       "price":2000,
+       "des" : "The operation theatres are well equipped with medical gas points, medical gas alarms, optical fire detectors.",
+       "img":"http://grandecityhospital.com/wp-content/uploads/2017/04/UME_0266.jpg"
+    },
+    {
+       "id" : 3,
+       "name":"Outdoor Checkup",
+       "price":2500,
+       "des" : "Outdoor Checkup. There is an outdoor treatment zone or section in Vijetha Hospital for regular health checkups of different disease.",
+       "img":"https://www.nationalmrict.com/uploaded_files/speciality/thumb_image_10.png"
+    },
+    {
+       "id" : 4,
+       "name":"Cancer Service",
+       "price":9000,
+       "des" : "Accurate, up-to-date, comprehensive cancer information from the U.S. government's principal agency for cancer research.",
+       "img":"https://www.chifranciscan.org/content/chi-franciscan/en/health-care-services/cancer-care/your-cancer-journey/jcr:content/hero/photo_band.img.768.high.jpg/1611768699430.jpg"
+    },
+    {  
+       "id" : 5,
+       "name":"Blood Test",
+       "price":3000,
+       "des" : "A blood test usually involves taking a blood sample from a blood vessel in your arm. The arm is a convenient part of the body to use because it can be easily",
+       "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTJ4hiP-aQwAtcqNdzfF-MOmCvyKRGj2cgFk6BRif30X2ixWYou9tya2uhO08-9FxQP-U&usqp=CAU"
+    },
+    {  
+      "id" : 6,
+       "name":"Medicine",
+       "price":7000,
+       "des" : "The National Library of Medicine (NLM), on the NIH campus in Bethesda, Maryland, is the world's largest biomedical library and the developer of electronic ",
+       "img":"https://epsilon.aeon.co/images/afef287f-dd6f-4a6a-b8a6-4f0a09330657/idea_sized-kendal-l4ikccachoc-unsplash.jpg"
+    }
+ ]

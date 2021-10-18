@@ -1,0 +1,17 @@
+.img{
+    width:100%;
+    height:40vh;
+    margin: auto;
+
+}
+
+.name{
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+}
+.price{
+    font-family: 'Teko', sans-serif;
+}
+.des{
+    font-family: 'Andada Pro', serif;
+}

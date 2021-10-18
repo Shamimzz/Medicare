@@ -1,0 +1,38 @@
+.About-banner{
+    padding:100px 0px 300px;
+    position: relative;
+    background:url("../Images/about-banner.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    height:90%;
+    overflow: hidden;
+}
+
+.section-heading{
+    margin-bottom:70px;
+  }
+h3.section-heading{
+    font-size: 38px;
+    margin:10px 0px 10px;
+    line-height: 44px;
+  }
+p.section-heading{
+    color: #222222;
+  }
+.center-heading{
+    text-align:Center;
+  }
+p.center-heading{
+    padding:0px 70px;
+  }
+.subheading{
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+.cardImg{
+    width: 100%;
+  }
