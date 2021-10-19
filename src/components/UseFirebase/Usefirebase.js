@@ -16,24 +16,25 @@ const auth = getAuth();
 export const useFirebase = () => {
     const [user, setUser] = useState({});
     const [error, setError] = useState('');
-    // const [email, setEmail] = useState('');
-    // const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     const [isLoading, setIsLoading] = useState(true);
-     
+     console.log(email);
 
   // Sign in with email & password.
-    // const SignInWithEmail = (e) =>{
-    //   e.preventDefault()
-    //   console.log(email,password);
-    //   Initializetion.auth().signInWithEmailAndPassword(email,password)
-    //   .then(()=>{
-    //     alert("Login success")
-    //   })
-    //   .catch((error)=>{
-    //     alert("No user exist | ",error);
-    //   })
-    // }
+    const SignInWithEmail = (e) =>{
+      e.preventDefault()
+      // console.log(email, password);
+      Initializetion.auth().signInWithEmailAndPassword(email,password)
+      .then(()=>{
+        alert("Login success")
+      })
+      // .catch((error)=>{
+      //   alert("No user exist | ",error);
+      // })
+      console.log('clicked')      
+    }
   
 
     const handeleGoogleAuth = () => {
@@ -89,12 +90,15 @@ export const useFirebase = () => {
   }
 
   return {
+      setEmail,
+      setPassword,
       error,
       user,
       isLoading, 
       handeleGoogleAuth,
       handleLogOut,
       handelFacbook,
+      SignInWithEmail
     };
 }
 

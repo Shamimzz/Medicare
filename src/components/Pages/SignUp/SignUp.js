@@ -7,7 +7,7 @@ import { useHistory, useLocation } from 'react-router';
 
 const SignUp = () => {
 
-    const {handeleGoogleAuth} = useAuth();
+    const {handeleGoogleAuth, SignInWithEmail} = useAuth();
 
      // used for privateRouter locations.
      const location = useLocation();  
@@ -48,7 +48,7 @@ const SignUp = () => {
         			<label className="form-check-label"><input type="checkbox" required="required"/> I accept the Terms of Use amp; Privacy Policy </label>
         		</div>
         		<div className="form-group">
-                    <Button type="submit" className="btn btn-info  btn-block">Register Now</Button>
+                    <Button onClick={SignInWithEmail} type="submit" className="btn btn-info  btn-block">Register Now</Button>
                 </div>
             </div>
         	<div className="text-center">Already have an account? <Link className="text-danger" to="/login">Sign in</Link></div>
