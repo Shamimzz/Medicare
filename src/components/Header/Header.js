@@ -4,11 +4,12 @@ import { HashLink as Link } from 'react-router-hash-link';
 import './Header.css';
 
 import Button from '@restart/ui/esm/Button';
-import Usefirebase from '../UseFirebase/Usefirebase';
+// import Usefirebase from '../UseFirebase/Usefirebase';
+import useAuth from '../Hooks/useAuth';
 
 const Header = () => {
 
-   const {user, handleLogOut} = Usefirebase();
+   const {user, handleLogOut} = useAuth();
 
     return (
         <div>

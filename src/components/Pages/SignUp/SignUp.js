@@ -1,9 +1,28 @@
 import Button from '@restart/ui/esm/Button';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../Hooks/useAuth';
 import './SignUp.css';
+import { useHistory, useLocation } from 'react-router';
 
 const SignUp = () => {
+
+    const {handeleGoogleAuth} = useAuth();
+
+     // used for privateRouter locations.
+     const location = useLocation();  
+     const history = useHistory();
+
+     // shop korte chaile taree direct kore ene login page a anlm || r jodi direct login kore tahle Home a pathay dibo. 'shop' ...
+     const redirect_uri = location.state?.from || '/home';
+
+     const handelGoogle = () => {
+       handeleGoogleAuth()
+       .then((result) => {
+          history.push(redirect_uri) 
+       })
+     }
+
     return (
         <div>
             <div className="signup-form">
@@ -29,11 +48,11 @@ const SignUp = () => {
         			<label className="form-check-label"><input type="checkbox" required="required"/> I accept the Terms of Use amp; Privacy Policy </label>
         		</div>
         		<div className="form-group">
-                    <button type="submit" className="btn btn-success btn-lg btn-block">Register Now</button>
+                    <Button type="submit" className="btn btn-info  btn-block">Register Now</Button>
                 </div>
             </form>
         	<div className="text-center">Already have an account? <Link className="text-danger" to="/login">Sign in</Link></div>
-            <Button className="btn btn-warning mt-3" type="submit"><i className="fab fa-google-plus-g"></i>Register with Google</Button>
+            <Button onClick={handelGoogle} className="btn btn-primary mt-3" type="submit"><i className="fab fa-google-plus-g"></i>Register with Google</Button>
           </div>
         </div>
     );
