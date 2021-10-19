@@ -4,14 +4,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   font-family: 'Andada Pro', serif;
-  font-family: 'Rajdhani', sans-serif;
-  font-family: 'Sora', sans-serif;
-  font-family: 'Teko', sans-serif;
 
-  font-weight: 400;
+  font-weight: 300;
   font-size: 15px;
   line-height: 25px;
-  color: #9dabaf;
+  color: black;
   background-color: #f3f7f9;
   letter-spacing: 0px;
 
@@ -20,14 +17,17 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+    color: black;
+}
+
+h3{
+  font-family: 'Andada Pro', sans-serif;
+  color: black;
 }
 
 h2{
   font-family: 'Teko', sans-serif;
-}
-
-h3{
-  font-family: 'Teko', sans-serif;
+  color: black;
 }
 
 

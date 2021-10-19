@@ -26,7 +26,7 @@ const SignUp = () => {
     return (
         <div>
             <div className="signup-form">
-            <form action="">
+            <div action="">
         	 <h2>Register Your Account</h2>
         		<p className="hint-text">Create your account. It's free and only takes a minute.</p>
                 <div className="form-group">
@@ -50,9 +50,9 @@ const SignUp = () => {
         		<div className="form-group">
                     <Button type="submit" className="btn btn-info  btn-block">Register Now</Button>
                 </div>
-            </form>
+            </div>
         	<div className="text-center">Already have an account? <Link className="text-danger" to="/login">Sign in</Link></div>
-            <Button onClick={handelGoogle} className="btn btn-primary mt-3" type="submit"><i className="fab fa-google-plus-g"></i>Register with Google</Button>
+            <Button onClick={handelGoogle} className="btn btn-primary mt-3" type="submit">Register with Google</Button>
           </div>
         </div>
     );

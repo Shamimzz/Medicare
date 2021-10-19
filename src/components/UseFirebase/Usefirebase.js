@@ -1,5 +1,5 @@
 
-import { getAuth, signInWithPopup, signInWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signOut,FacebookAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut,FacebookAuthProvider } from "firebase/auth";
 import { useEffect, useState } from "react"
 import Initializetion from "../Pages/Login/Firebase/Firebase.ini";
 
@@ -14,26 +14,26 @@ const auth = getAuth();
 
 // 3. create Firebase function.
 export const useFirebase = () => {
-    const [user, setUser] = useState({}); //empty arry true.
+    const [user, setUser] = useState({});
     const [error, setError] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    // const [email, setEmail] = useState('');
+    // const [password, setPassword] = useState('');
 
     const [isLoading, setIsLoading] = useState(true);
      
 
   // Sign in with email & password.
-    const SignInWithEmail = (e) =>{
-      e.preventDefault()
-      console.log(email,password);
-      Initializetion.auth().signInWithEmailAndPassword(email,password)
-      .then(()=>{
-        alert("Login success")
-      })
-      .catch((error)=>{
-        alert("No user exist | ",error);
-      })
-    }
+    // const SignInWithEmail = (e) =>{
+    //   e.preventDefault()
+    //   console.log(email,password);
+    //   Initializetion.auth().signInWithEmailAndPassword(email,password)
+    //   .then(()=>{
+    //     alert("Login success")
+    //   })
+    //   .catch((error)=>{
+    //     alert("No user exist | ",error);
+    //   })
+    // }
   
 
     const handeleGoogleAuth = () => {
@@ -60,7 +60,7 @@ export const useFirebase = () => {
     
 
   // Sign-out successful.
-  // Signout korle object ta empty.
+
   const handleLogOut = () => {
     setIsLoading(true);
       signOut(auth)
@@ -68,7 +68,9 @@ export const useFirebase = () => {
       .finally(()=> setIsLoading(false))
     }
    
+
   // FaceBook Log In ...
+
   const handelFacbook = () => {
     signInWithPopup(auth, facebookProvider)
     .then((result) => {
@@ -87,12 +89,12 @@ export const useFirebase = () => {
   }
 
   return {
+      error,
       user,
       isLoading, 
       handeleGoogleAuth,
       handleLogOut,
       handelFacbook,
-      SignInWithEmail,
     };
 }
 
