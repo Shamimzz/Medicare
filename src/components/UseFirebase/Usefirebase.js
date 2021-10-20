@@ -56,27 +56,26 @@ export const useFirebase = () => {
 
 
 
-
   // Sign up with email
-    const SignUpWithEmail = (e) =>{
-      e.preventDefault()
-      console.log(email, name, password);
-      createUserWithEmailAndPassword (auth, email, password)
-      .then((result)=>{
-        setUser(result.user);
-        // updateProfile
-        updateProfile(auth.currentUser, {
-          displayName: name
-        }).then((res) => {
+    // const SignUpWithEmail = (e) =>{
+    //   e.preventDefault()
+    //   console.log(email, name, password);
+    //   createUserWithEmailAndPassword (auth, email, password)
+    //   .then((result)=>{
+    //     setUser(result.user);
+    //     // updateProfile
+    //     updateProfile(auth.currentUser, {
+    //       displayName: name
+    //     }).then((res) => {
 
-        }).catch((error) => {
+    //     }).catch((error) => {
 
-        });
-      })
-      .catch((error)=>{
-        swal("Oops!", "No User Exist!", "error");
-      })
-    }
+    //     });
+    //   })
+    //   .catch((error)=>{
+    //     swal("Oops!", "No User Exist!", "error");
+    //   })
+    // }
   
 
     // Google login
@@ -133,6 +132,7 @@ export const useFirebase = () => {
   }
 
   return {
+      setUser,
       setEmail,
       setPassword,
       error,
@@ -141,7 +141,7 @@ export const useFirebase = () => {
       handeleGoogleAuth,
       handleLogOut,
       handelFacbook,
-      SignUpWithEmail,
+      name,
       email,
       auth,
       password,

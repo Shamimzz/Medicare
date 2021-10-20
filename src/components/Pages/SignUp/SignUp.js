@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import './SignUp.css';
 import { useHistory, useLocation } from 'react-router';
+import { createUserWithEmailAndPassword, updateProfile } from '@firebase/auth';
+import swal from 'sweetalert';
 
 
 
@@ -11,7 +13,7 @@ import { useHistory, useLocation } from 'react-router';
 const SignUp = () => {
     
     // Gets data from returen firebase by UseAuth().......
-    const {handeleGoogleAuth, SignUpWithEmail, handlePasswordSet, handleEmailSet, handleNameSet} = useAuth();
+    const {handeleGoogleAuth, name,  email, setUser, password, auth, handlePasswordSet, handleEmailSet, handleNameSet} = useAuth();
 
      // used for privateRouter locations.
      const location = useLocation();  
@@ -27,6 +29,34 @@ const SignUp = () => {
           history.push(redirect_uri) 
        })
      }
+
+
+
+  // Sign Up with email And Password.
+     const SignUpWithEmail = (e) =>{
+        e.preventDefault()
+        console.log(email, name, password);
+        createUserWithEmailAndPassword(auth, email, password)
+        .then((result)=>{
+          setUser(result.user);
+          history.push(redirect_uri) 
+          // updateProfile
+          updateProfile(auth.currentUser, {
+            displayName: name
+          }).then((res) => {
+  
+          }).catch((error) => {
+  
+          });
+        })
+        .catch((error)=>{
+          swal("Oops!", "User Already Exist!", "error");
+        //   console.log(error.code, error.message);
+          history.push(redirect_uri) 
+        })
+      }
+    
+
 
     return (
         <div>
