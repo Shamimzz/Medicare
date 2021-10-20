@@ -10,6 +10,7 @@ import useAuth from '../Hooks/useAuth';
 const Header = () => {
 
    const {user, handleLogOut} = useAuth();
+   console.log(user);
 
     return (
         <div>
@@ -27,14 +28,14 @@ const Header = () => {
                    <Nav.Link className="link" as={Link} to="/contact">Contact</Nav.Link>
                </Nav>  
                <Navbar.Text className="">
-                  <a href="#login" className="p-2">{user?.displayName && user.displayName}</a>
+                  <a href="#login" className="p-2 name">{user?.email && user.displayName}</a>
+                  <span>{user?.email && <img className="profileImg" src={user.photoURL} alt=""/>}</span>
                </Navbar.Text> 
                { !user.email ? 
                 <Nav.Link as={Link} to="/login#login" className="btn btn-info text-dark m-3">Log In</Nav.Link>
                 :
-                <Button onClick={handleLogOut} className="btn btn-info m-3" to="/logout">Sign Out</Button>
+                <Button onClick={handleLogOut} className="btn btn-info m-3" to="/logout">SignOut</Button>
                }
-                <Button onClick={handleLogOut} className="btn btn-info m-3" as={Link} to="/signup#signup">Sign Up</Button>
              </Navbar.Collapse>
            </Container>
         </Navbar>

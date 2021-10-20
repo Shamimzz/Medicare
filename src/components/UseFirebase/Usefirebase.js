@@ -1,5 +1,5 @@
 
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut,FacebookAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, updateProfile, signInWithEmailAndPassword, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signOut,FacebookAuthProvider } from "firebase/auth";
 import { useEffect, useState } from "react"
 import Initializetion from "../Pages/Login/Firebase/Firebase.ini";
 
@@ -12,31 +12,77 @@ const googleAuthProvider = new GoogleAuthProvider();
 const facebookProvider = new FacebookAuthProvider();
 const auth = getAuth();
 
+
 // 3. create Firebase function.
 export const useFirebase = () => {
     const [user, setUser] = useState({});
     const [error, setError] = useState('');
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
     const [isLoading, setIsLoading] = useState(true);
-     console.log(email);
+
+
 
   // Sign in with email & password.
-    const SignInWithEmail = (e) =>{
+   const handleNameSet = (e) => {
+      setName(e.target.value);
+      // console.log(e.target.value);
+    }
+   const handleEmailSet = (e) => {
+    setEmail(e.target.value);
+    // console.log(e.target.value);
+    }
+   const handlePasswordSet = (e) => {
+    setPassword(e.target.value);
+    // console.log(e.target.value);
+    }
+
+
+
+   // Sign In with email
+  //  const SignInWithEmail = (e) =>{
+  //   e.preventDefault()
+  //   console.log(email, name, password);
+  //   signInWithEmailAndPassword(auth, email, password)
+  //   .then((result)=>{
+  //     alert("Login success")
+  //   })
+  //   .catch((error)=>{
+  //     // alert("No user exist| ",error.code);
+  //     console.log(error.code);
+  //   })
+  //   console.log('clicked')      
+  // }
+
+
+
+
+  // Sign up with email
+    const SignUpWithEmail = (e) =>{
       e.preventDefault()
-      // console.log(email, password);
-      Initializetion.auth().signInWithEmailAndPassword(email,password)
-      .then(()=>{
-        alert("Login success")
+      console.log(email, name, password);
+      createUserWithEmailAndPassword (auth, email, password)
+      .then((result)=>{
+        // alert("Login success")
+        setUser(result.user);
+        updateProfile(auth.currentUser, {
+          displayName: name
+        }).then((res) => {
+           console.log(res.user);
+        }).catch((error) => {
+
+        });
+        // console.log(result);
       })
-      // .catch((error)=>{
-      //   alert("No user exist | ",error);
-      // })
+      .catch((error)=>{
+        alert("No user exist | ",error);
+      })
       console.log('clicked')      
     }
   
 
+    // Google login
     const handeleGoogleAuth = () => {
       setIsLoading(true);
       // return korci then er kaj ta login a korci.
@@ -98,7 +144,13 @@ export const useFirebase = () => {
       handeleGoogleAuth,
       handleLogOut,
       handelFacbook,
-      SignInWithEmail
+      SignUpWithEmail,
+      email,
+      auth,
+      password,
+      handleNameSet,
+      handleEmailSet,
+      handlePasswordSet
     };
 }
 
