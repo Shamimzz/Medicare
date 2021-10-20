@@ -17,12 +17,7 @@ import AuthProvider from './components/Hooks/AuthProvider';
 import PrivateRoute from './components/Pages/PrivateRoute/PrivateRoute';
 import Appointment from './components/Pages/Appointment/Appointment';
 
-// import Banner from './Pages/Home/Banner/Banner';
-// import Booking from './Pages/Home/Booking/Booking/Booking';
-// import Services from './Pages/Home/Services/Services';
-// import Login from './Pages/Login/Login/Login';
-// import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
-// import NotFound from './Pages/NotFound/NotFound';
+
 
 function App() {
   return (
@@ -46,9 +41,9 @@ function App() {
            <Route exact path="/about">
              <About></About>
            </Route>
-           <Route exact path="/doctors">
+           <PrivateRoute exact path="/doctors">
              <Doctors></Doctors>
-           </Route>
+           </PrivateRoute>
            <Route exact path="/contact">
              <Contact></Contact>
            </Route>

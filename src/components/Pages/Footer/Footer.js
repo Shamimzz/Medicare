@@ -8,6 +8,9 @@ import { FaFacebook } from "react-icons/fa";
 import { BsInstagram } from "react-icons/bs";
 import { AiFillLinkedin } from "react-icons/ai";
 
+
+
+// Global Footer .................... 
 const Footer = () => {
     return (
         <div>

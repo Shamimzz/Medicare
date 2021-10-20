@@ -18,6 +18,7 @@ const Contact = () => {
             <Row className="g-4">
                 <div className="row">
                    <h4 className="after mt-4 mb-4 text-center m-auto fs-2 w-50">For more information about our Services, Get in touch</h4>
+                   <p className="w-75 m-auto mb-4">Let your customers book an appointment effortlessly or find the right doctor in no time. It’s easy with MediClinic!Residency is a post-graduate period in which a doctor practices medicine under the specialty.</p>
                 </div>
                 <Col className="p-4 shadow-lg m-3 ">
                    <div className="p-3 m-2">

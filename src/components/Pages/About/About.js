@@ -1,10 +1,6 @@
 import React from 'react';
 import './About.css';import { Card, Col, Row } from 'react-bootstrap';
 
-// import team1 from './team-1.jpg';
-// import team2 from './team-2.jpg';
-// import team3 from './team-3.jpg';
-// import aboutBanner from '../../Pages/Images/about-banner.jpg';
 import title from '../../Pages/Images/title-icon.png';
 import Doctors from '../../Pages/Doctors/Doctors';
 
@@ -23,7 +19,7 @@ const About = () => {
              <div class="title-icon">
                <img class="mb-10" src={title} alt="title"/>
              </div>
-             <p className="">Since its founding Delmont has been providing its patients with the full medical care, encompassing outpatients services, is neurology.</p>
+             <p className="">Since its founding Delmont has been providing its patients with the full medical care, encompassing outpatients services, is neurology. Residency is a post-graduate period in which a doctor practices mn for three to seven years, depending on the specialty.</p>
           </div>
         </div>
           <div className="About-banner">
@@ -68,49 +64,7 @@ const About = () => {
          </Row>
         </div>
          </div>
-         
        <Doctors></Doctors>
-
-        {/* <div className="professional mt-5 mb-5">
-          <div class="section-heading center-heading">
-                    <span class="subheading">Best Expert Team</span>
-                    <h3>Our Professional Team</h3>
-                    <p>The ultimate planning solution for busy women who want to reach their personal goals</p>
-                </div>
-        </div>
-        <div className="container Team-members mt-5 mb-5">
-        <Row xs={1} md={3} className="g-4">
-            <Col>
-            <Card className="">
-            <Card.Img className="cardImg" variant="top" src={team1} />
-            <Card.Body>
-              <Card.Title>Harish Ham</Card.Title>
-              <p className="text-muted">CEO, Developer</p>
-            </Card.Body>
-          </Card>
-          </Col>
-          <Col>
-          <Card className="">
-            <Card.Img className="cardImg" variant="top" src={team2} />
-            <Card.Body>
-              <Card.Title>Tanvir Hasan</Card.Title>
-              <p className="text-muted">Market Researcher</p>
-            </Card.Body>
-          </Card>
-          </Col>
-          <Col>
-          <Card className="">
-            <Card.Img className="cardImg" variant="top" src={team3} />
-            <Card.Body>
-              <Card.Title>Mikele John</Card.Title>
-              <p className="text-muted">Market Researcher</p>
-            </Card.Body>
-          </Card>
-          </Col>
-         </Row>
-        </div>
-       */}
-
       </div>
     );
 };

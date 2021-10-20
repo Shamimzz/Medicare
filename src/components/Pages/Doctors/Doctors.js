@@ -17,6 +17,8 @@ import { Link } from 'react-router-dom';
 
 import title from '../../Pages/Images/title-icon.png';
 
+
+// Doctors parts from here.
 const Doctors = () => {
     return (
          <div>        

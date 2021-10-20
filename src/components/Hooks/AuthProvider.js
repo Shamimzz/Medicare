@@ -4,7 +4,7 @@ import useFirebase from '../UseFirebase/Usefirebase';
 
 export const AuthContext = createContext();
 
-
+// useing Auth Provider.
 const AuthProvider = ({children}) => {
     // const {children} = props;
     // const allContext = useFirebase(); 

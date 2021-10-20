@@ -4,6 +4,8 @@ import './Extra1.css';
 import { IoLogoYoutube } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 
+
+// Extra part one ...........................
 const Extra1 = () => {
 
     return (

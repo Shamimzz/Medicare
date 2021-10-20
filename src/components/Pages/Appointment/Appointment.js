@@ -3,11 +3,16 @@ import { Card, Col } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import './Appointment.css';
+//Reacts fonts
 import { FcCurrencyExchange } from "react-icons/fc";
 
-const Appointment = () => {
-    const {id} = useParams();
 
+
+const Appointment = () => {
+    // useing use params.
+    const {id} = useParams();
+    
+    // Useing Json data for geting details.
     const [appointment, setAppointment] = useState({});
 
     useEffect( () => {

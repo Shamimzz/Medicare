@@ -2,10 +2,12 @@ import Button from '@restart/ui/esm/Button';
 import React from 'react';
 import './Login.css';
 
+// swal alert.
+import swal from 'sweetalert';
+
 // Reacts Icons
 import { FaFacebook } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
-// import { AiFillGithub } from "react-icons/ai";
 
 
 import { useHistory, useLocation } from 'react-router';
@@ -16,6 +18,7 @@ import { signInWithEmailAndPassword } from '@firebase/auth';
 
 const Login = () => {
 
+  // Gets data from returen firebase by UseAuth().......
   const {handlePasswordSet, email, password, auth, handleEmailSet, handeleGoogleAuth, handelFacbook} = useAuth();
 
   // used for privateRouter locations.
@@ -24,7 +27,8 @@ const Login = () => {
 
   // Shop korte chaile taree direct kore ene login page a anlm || r jodi direct login kore tahle Home a pathay dibo.
   const redirect_uri = location.state?.from || '/home';
-
+  
+  //signup with google.
   const handelGoogle = (e) => {
     e.preventDefault();
     handeleGoogleAuth()
@@ -34,7 +38,7 @@ const Login = () => {
   }
 
 
-   // Sign In with email
+   // Sign In with email And Password.
    const SignInWithEmail = (e) =>{
     e.preventDefault()
     signInWithEmailAndPassword(auth, email, password)
@@ -42,12 +46,10 @@ const Login = () => {
       history.push(redirect_uri);
     })
     .catch((error)=>{
-      // alert("No user exist| ",error.code);
-      console.log(error.code);
-    })
-    // console.log('clicked')      
+      //useing sweetalert.
+      swal("Oops!", "Maybe You Enter wrong email & password!", "error");
+    })   
    }
-
 
 
 

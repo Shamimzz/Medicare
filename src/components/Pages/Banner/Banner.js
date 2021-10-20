@@ -3,6 +3,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Banner.css';
 
+
+// Banner part
 const Banner = () => {
     return (
         <div>

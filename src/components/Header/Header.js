@@ -2,15 +2,24 @@ import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { HashLink as Link } from 'react-router-hash-link';
 import './Header.css';
-
 import Button from '@restart/ui/esm/Button';
-// import Usefirebase from '../UseFirebase/Usefirebase';
 import useAuth from '../Hooks/useAuth';
+
+import { AiOutlineLogin } from "react-icons/ai";
+import { AiOutlineLogout } from "react-icons/ai";
+import { FaUserCircle } from "react-icons/fa";
+
 
 const Header = () => {
 
    const {user, handleLogOut} = useAuth();
-   console.log(user);
+
+  //  const proPic = () => {
+  //   if(user.photoURL){
+  //    user.photoURL;
+  //    }else{
+  //     <FaUserCircle />
+  //    }
 
     return (
         <div>
@@ -32,9 +41,9 @@ const Header = () => {
                   <span>{user?.email && <img className="profileImg" src={user.photoURL} alt=""/>}</span>
                </Navbar.Text> 
                { !user.email ? 
-                <Nav.Link as={Link} to="/login#login" className="btn btn-info text-dark m-3">Log In</Nav.Link>
+                <Nav.Link as={Link} to="/login#login" className="btn btn-info text-dark m-3"><AiOutlineLogin /> Log In</Nav.Link>
                 :
-                <Button onClick={handleLogOut} className="btn btn-info m-3" to="/logout">SignOut</Button>
+                <Button onClick={handleLogOut} className="btn btn-info m-3" to="/logout"><AiOutlineLogout/> SignOut</Button>
                }
              </Navbar.Collapse>
            </Container>

@@ -3,6 +3,8 @@ import { getAuth, signInWithPopup, updateProfile, signInWithEmailAndPassword, Go
 import { useEffect, useState } from "react"
 import Initializetion from "../Pages/Login/Firebase/Firebase.ini";
 
+// swal alert.
+import swal from 'sweetalert';
  
 // 1. inisialize firebase from firebase.ini
 Initializetion();
@@ -27,20 +29,17 @@ export const useFirebase = () => {
   // Sign in with email & password.
    const handleNameSet = (e) => {
       setName(e.target.value);
-      // console.log(e.target.value);
     }
    const handleEmailSet = (e) => {
-    setEmail(e.target.value);
-    // console.log(e.target.value);
+      setEmail(e.target.value);
     }
    const handlePasswordSet = (e) => {
-    setPassword(e.target.value);
-    // console.log(e.target.value);
+      setPassword(e.target.value);
     }
 
 
 
-   // Sign In with email
+  // Sign In with email
   //  const SignInWithEmail = (e) =>{
   //   e.preventDefault()
   //   console.log(email, name, password);
@@ -64,21 +63,19 @@ export const useFirebase = () => {
       console.log(email, name, password);
       createUserWithEmailAndPassword (auth, email, password)
       .then((result)=>{
-        // alert("Login success")
         setUser(result.user);
+        // updateProfile
         updateProfile(auth.currentUser, {
           displayName: name
         }).then((res) => {
-           console.log(res.user);
+
         }).catch((error) => {
 
         });
-        // console.log(result);
       })
       .catch((error)=>{
-        alert("No user exist | ",error);
+        swal("Oops!", "No User Exist!", "error");
       })
-      console.log('clicked')      
     }
   
 

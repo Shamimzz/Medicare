@@ -7,9 +7,9 @@ import './Services.css';
 import title from '../../Pages/Images/title-icon.png';
 
 const Services = () => {
-
+    
+    // calling json data for showing those data on service section.
     const [services, setServices] = useState([]);
-
     useEffect( () => {
         fetch('/services.json')
           .then(res => res.json())
@@ -18,15 +18,13 @@ const Services = () => {
 
     return (
         <div className="container mt-5">
-
         <div class="section-title">
           <h2>SERVICES</h2>
             <div class="title-icon">
                 <img class="mb-10" src={title} alt="title"/>
             </div>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Keep your health in check with MediClinic! Packed with 12 easy customizable homepages and a modern collection of layouts perfect for doctor showcase,. Present every aspect of your medical clinic or create detailed doctors timetable with MediClinic’s great functionalities.</p>
         </div>
-
           <Row xs={1} md={3} className="g-4">
             {
                 services.map(service => <SingleService

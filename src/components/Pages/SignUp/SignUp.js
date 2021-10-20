@@ -5,17 +5,22 @@ import useAuth from '../../Hooks/useAuth';
 import './SignUp.css';
 import { useHistory, useLocation } from 'react-router';
 
-const SignUp = () => {
 
-    const {handeleGoogleAuth, SignUpWithEmail, SignInWithEmail, handlePasswordSet, handleEmailSet, handleNameSet} = useAuth();
+
+// Sign Up or Registration from.
+const SignUp = () => {
+    
+    // Gets data from returen firebase by UseAuth().......
+    const {handeleGoogleAuth, SignUpWithEmail, handlePasswordSet, handleEmailSet, handleNameSet} = useAuth();
 
      // used for privateRouter locations.
      const location = useLocation();  
      const history = useHistory();
 
-     // shop korte chaile taree direct kore ene login page a anlm || r jodi direct login kore tahle Home a pathay dibo. 'shop' ...
+     // shop korte chaile taree direct kore ene login page a anlm || r jodi direct login kore tahle Home a pathay dibo.
      const redirect_uri = location.state?.from || '/home';
-
+    
+     // function for useing google click to go destination pages.
      const handelGoogle = () => {
        handeleGoogleAuth()
        .then((result) => {
