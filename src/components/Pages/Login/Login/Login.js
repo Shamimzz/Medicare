@@ -78,9 +78,9 @@ const Login = () => {
                 </div>
             </form>
            <div className="mb-3" controlId="formBasicCheckbox">
-               <h6 className="text-muted">Sign In Others.</h6>
-               <Button onClick={handelGoogle} className="btn btn-sm" type="submit"><FaGoogle color="red" fontSize="20px"/></Button>      
-              <Button onClick={handelFacbook} as={Link} to="home" className="btn btn-sm" type="submit"><FaFacebook color="green" fontSize="20px"/></Button>
+               <h6 className="text-muted">Sign In with</h6>
+               <Button onClick={handelGoogle} className="btn btn-sm btn-darger" type="submit"><FaGoogle color="red" fontSize="30px"/>oogle</Button>      
+               {/* <Button onClick={handelFacbook} className="btn btn-sm" type="submit"><FaFacebook color="green" fontSize="20px"/></Button> */}
              </div>
            <Button to="/signup" as={Link} className="btn btn-info text-decoration-none text-light" type="submit">Register Account</Button>
 

@@ -87,6 +87,7 @@ export const useFirebase = () => {
     }
     
 
+
   // Auth state change or not.
   useEffect( () => {
     const Unsubscribe = onAuthStateChanged(auth, user => {
@@ -102,8 +103,8 @@ export const useFirebase = () => {
     }, [])
     
 
-  // Sign-out successful.
 
+  // Sign-out successful.
   const handleLogOut = () => {
     setIsLoading(true);
       signOut(auth)
@@ -113,7 +114,6 @@ export const useFirebase = () => {
    
 
   // FaceBook Log In ...
-
   const handelFacbook = () => {
     signInWithPopup(auth, facebookProvider)
     .then((result) => {

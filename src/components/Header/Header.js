@@ -7,13 +7,12 @@ import useAuth from '../Hooks/useAuth';
 
 import { AiOutlineLogin } from "react-icons/ai";
 import { AiOutlineLogout } from "react-icons/ai";
+
 // import { FaUserCircle } from "react-icons/fa";
 
 
 const Header = () => {
-
    const {user, handleLogOut} = useAuth();
-
 
   //  const proPic = () => {
   //   if(user.photoURL){
