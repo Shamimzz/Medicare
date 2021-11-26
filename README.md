@@ -1,8 +1,12 @@
-## Live Site link: https://medicare-assign-10-pro.web.app
+# Live Site link: https://medicare-assign-10-pro.web.app
 
 # Website name: Medicare
- Description : Medical related website which is based on medical activity.
- Website has Six section. 
+➢ This is Medicare website based on Medical Activities & Fully responsive.
+
+➢ Users can Log in via ( Email & password, Google, Facebook) with firebase 
+  authentication.
+
+➢ Users can get an appointment & manage theirs appointments.
 # Home page contains:
   1. banner part 
   2. Service part.
